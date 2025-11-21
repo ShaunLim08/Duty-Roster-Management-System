@@ -1,14 +1,21 @@
 <script setup>
+import { useI18n } from '../composables/useI18n';
+
+const { t } = useI18n();
 </script>
 
 <template>
   <div class="home-container">
     <div class="hero glass-panel">
-      <h1>Duty Roster Management System</h1>
-      <p>Manage personnel, schedule shifts, and view statistics efficiently.</p>
+      <h1>{{ t('home.title') }}</h1>
+      <p>{{ t('home.subtitle') }}</p>
       <div class="actions">
-        <router-link to="/personnel" class="btn">Manage Personnel</router-link>
-        <router-link to="/roster" class="btn">View Roster</router-link>
+        <router-link to="/personnel" class="btn">{{
+          t('home.managePersonnel')
+        }}</router-link>
+        <router-link to="/roster" class="btn">{{
+          t('home.viewRoster')
+        }}</router-link>
       </div>
     </div>
   </div>
